@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import { Root } from "./components/Root";
-import { Dashboard } from "./pages/Dashboard";
+import { NexusDashboard } from "./pages/NexusDashboard";
 import { Assets } from "./pages/Assets";
 import { WorkOrders } from "./pages/WorkOrders";
 import { Inventory } from "./pages/Inventory";
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     path: "/",
     Component: Root,
     children: [
-      { index: true, Component: Dashboard },
+      { index: true, Component: NexusDashboard },
       { path: "assets", Component: Assets },
       { path: "work-orders", Component: WorkOrders },
       { path: "inventory", Component: Inventory },

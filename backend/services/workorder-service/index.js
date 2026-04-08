@@ -18,10 +18,11 @@ app.get('/', async (req, res) => {
     const orders = await prisma.workOrder.findMany({
       orderBy: { createdAt: 'desc' }
     });
-    // Parse partsUsed from JSON
+    // Parse partsUsed and aiDiagnosticReport from JSON
     const parsed = orders.map(o => ({
       ...o,
-      partsUsed: JSON.parse(o.partsUsed || '[]')
+      partsUsed: JSON.parse(o.partsUsed || '[]'),
+      aiDiagnosticReport: o.aiDiagnosticReport ? JSON.parse(o.aiDiagnosticReport) : null
     }));
     res.json(parsed);
   } catch (error) {
