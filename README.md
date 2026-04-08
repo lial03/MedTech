@@ -9,7 +9,7 @@
 
 ## 🏛 Project Context
 
-- **Project Name**: MedTech Innovators
+- **Project Name**: MedTech
 
 ## 🚀 System Architecture
 
