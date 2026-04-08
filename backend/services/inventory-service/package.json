@@ -1,0 +1,21 @@
+{
+  "name": "fi-cmms-inventory-service",
+  "version": "1.0.0",
+  "description": "Inventory Service for Fi-CMMS",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.14.0",
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "prisma": "^5.14.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "fi-cmms-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Fractal-Informed Computerized Maintenance Management System (Native Microservices)",
+  "scripts": {
+    "dev": "npm run dev:all",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:gateway": "cd backend/gateway && npm run dev",
+    "dev:assets": "cd backend/services/asset-service && npm run dev",
+    "dev:workorders": "cd backend/services/workorder-service && npm run dev",
+    "dev:inventory": "cd backend/services/inventory-service && npm run dev",
+    "dev:ai": "cd ai-service && py main.py",
+    "dev:all": "concurrently -k -p \"[{name}]\" -n \"UI,GW,AS,WO,IV,AI\" -c \"blue,green,magenta,cyan,yellow,red\" \"npm run dev:frontend\" \"npm run dev:gateway\" \"npm run dev:assets\" \"npm run dev:workorders\" \"npm run dev:inventory\" \"npm run dev:ai\"",
+    "setup": "node scripts/setup.js",
+    "db:generate": "cd backend && npx prisma generate",
+    "db:push": "cd backend && npx prisma db push"
+  },
+  "devDependencies": {
+    "@prisma/client": "^7.7.0",
+    "@types/node": "^25.5.2",
+    "concurrently": "^8.2.2",
+    "prisma": "^7.7.0"
+  }
+}
